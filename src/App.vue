@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="control">
+      <el-collapse-transition>
+        <handleBtn v-show="show"></handleBtn>
+      </el-collapse-transition>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import topNav from "@/components/top-nav";
+import { mixin } from "@/mixin";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+
+  data() {
+    return {};
+  },
+  methods: {},
+  mixins: [mixin],
+};
 </script>
 
-<style>
+<style lang="less">
+ul,
+li {
+  list-style: none;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: pink;
+  width: 100vw;
+  height: 100vh;
+  min-width: 1200px;
+  background: url("~@/assets/1.JPG") no-repeat;
+  background-size: cover;
+  .control {
+    z-index: 1;
+    position: fixed;
+    top: 80vh;
+    right: 30px;
+  }
 }
 </style>
