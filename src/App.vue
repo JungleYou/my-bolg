@@ -36,9 +36,8 @@ li {
   list-style: none;
 }
 #app {
-  color: pink;
+  color: @black;
   width: 100vw;
-  height: 100vh;
   min-width: 1200px;
 
   .topNav {

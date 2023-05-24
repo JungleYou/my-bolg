@@ -1,6 +1,6 @@
 <template>
   <div class="blogs">
-    <el-row :gutter="20"
+    <el-row :gutter="30"
       ><el-col :span="10"> <el-image :src="url"></el-image></el-col>
       <el-col :span="14">
         <div class="text">
@@ -35,10 +35,15 @@ export default {
   padding-right: 20px;
   border-radius: 10px;
   overflow: hidden;
-  background-color: @c-100;
+  background-color: @c-50;
+  transition: all 0.1s;
+  &:hover {
+    box-shadow: 1px 1px 5px @c-300;
+  }
   .el-image {
     height: 200px;
     border-radius: 10px;
+    margin-bottom: -4px;
     min-width: 150px;
     cursor: pointer;
     transition: all 0.5s;

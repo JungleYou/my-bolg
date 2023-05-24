@@ -24,6 +24,11 @@ const router = new VueRouter({
       path: "/blogDetail",
       component: () => import("@/pages/blog-detail"),
     },
+    {
+      name: "timeLine",
+      path: "/timeLine",
+      component: () => import("@/pages/time-line"),
+    },
   ],
 });
 

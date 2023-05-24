@@ -20,11 +20,15 @@ export default {
   name: "markDown",
   data() {
     return {
-      value: `# 123`,
+      value: `# 这是标题 
+      这是内容`,
     };
   },
 };
 </script>
 
 <style lang="less" scoped>
+.markdown {
+  overflow: hidden;
+}
 </style>

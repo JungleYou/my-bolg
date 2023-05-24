@@ -24,6 +24,10 @@ import blogItem from "@/components/blog-item";
 Vue.component(blogItem.name, blogItem);
 import markDown from "@/components/mark-down";
 Vue.component(markDown.name, markDown);
+import myComment from "@/components/my-comment";
+Vue.component(myComment.name, myComment);
+import remarkItem from "@/components/remark-item";
+Vue.component(remarkItem.name, remarkItem);
 
 // 引入markdown
 import mavonEditor from "mavon-editor";

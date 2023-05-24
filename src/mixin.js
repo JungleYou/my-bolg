@@ -10,6 +10,7 @@ export const mixin = {
   },
   methods: {
     handleScroll(e) {
+      console.log(e.deltaY);
       if (e.deltaY > 0) {
         this.show = false;
       } else {

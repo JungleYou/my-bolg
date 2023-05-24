@@ -1,11 +1,13 @@
 <template>
   <div class="content">
     <el-row type="flex" justify="space-between">
-      <el-col> <header class="title">YYS的个人博客</header></el-col>
+      <el-col>
+        <header class="title" @click="toIndex">YYS的个人博客</header></el-col
+      >
       <el-col>
         <ul class="nav">
           <li @click="toMusic"><i class="el-icon-s-home"></i>音乐项目</li>
-          <li><i class="el-icon-tickets"></i>时间轴</li>
+          <li @click="toTimeLine"><i class="el-icon-tickets"></i>时间轴</li>
           <li><i class="el-icon-thumb"></i>关于</li>
         </ul>
       </el-col>
@@ -19,6 +21,12 @@ export default {
   methods: {
     toMusic() {
       open("http://117.50.177.183/music", "_blank");
+    },
+    toIndex() {
+      this.$router.push({ name: "homePage" });
+    },
+    toTimeLine() {
+      this.$router.push({ name: "timeLine" });
     },
   },
 };
@@ -43,6 +51,7 @@ export default {
     text-indent: 1em;
     font-size: 30px;
     color: @white;
+    cursor: pointer;
   }
   .nav {
     li {

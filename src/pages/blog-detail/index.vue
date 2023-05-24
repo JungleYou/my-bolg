@@ -12,7 +12,12 @@
             <h4>发布时间:2023-10-19 | 更新时间:2024-10-19</h4>
             <h6>字数统计:2000 | 阅读量:3000 | 评论数:900 | 点赞量:1200</h6>
           </div>
-          <div class="text"><markDown></markDown></div>
+          <div class="text">
+            <markDown></markDown>
+          </div>
+          <div class="comment">
+            <myComment></myComment>
+          </div>
         </div>
       </el-col>
     </el-row>
@@ -58,10 +63,13 @@ export default {
     }
     .text {
       margin-top: 20px;
-      height: 1000px;
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0;
       color: @black;
-      background-color: pink;
+      overflow: hidden;
+    }
+    .comment {
+      padding: 10px;
+      background-color: @white;
     }
   }
 }

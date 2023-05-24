@@ -21,7 +21,11 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
-  background-color: @c-100;
+  background-color: @c-50;
+  transition: all 0.1s;
+  &:hover {
+    box-shadow: 1px 1px 5px @c-300;
+  }
   .title {
     font-size: 25px;
     i {
