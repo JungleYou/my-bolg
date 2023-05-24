@@ -1,12 +1,5 @@
 <template>
   <div class="content">
-    <!-- 顶部导航 start-->
-    <div class="topNav">
-      <el-collapse-transition>
-        <topNav v-show="show"></topNav>
-      </el-collapse-transition>
-    </div>
-    <!-- 顶部导航 end -->
     <!-- 主页中间按钮 start -->
     <div class="middle">
       <div class="title">
@@ -18,29 +11,22 @@
       </div>
     </div>
     <!-- 主页中间按钮 end -->
-    <div class="main">
-      <el-row :gutter="20">
-        <el-col :span="5" class="right"
-          ><div class="user"><userInfo></userInfo></div>
-          <div class="notice"><myNotice></myNotice></div>
-        </el-col>
-        <el-col :span="19" :offset="5"
-          ><div class="blog">
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem>
-            <blogItem></blogItem></div
-        ></el-col>
-      </el-row>
-    </div>
+    <el-row class="main" :gutter="20">
+      <el-col :span="6" class="left">
+        <userInfo class="user"></userInfo>
+        <myNotice></myNotice>
+      </el-col>
+      <el-col :span="18">
+        <el-row :gutter="20">
+          <div @click="toBlogDetail">
+            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
+            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
+            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
+            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
+          </div>
+        </el-row>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -61,27 +47,32 @@ export default {
         behavior: "smooth",
       });
     },
+    // 去到blog详情页
+    toBlogDetail(e) {
+      // console.dir(e.target)
+      if (e.target.nodeName === "IMG" || e.target.nodeName === "H1") {
+        // console.log(1);
+        this.$router.push({ name: "blogDetail" });
+      }
+    },
   },
 };
 </script>
 
 <style lang="less" scoped>
 .content {
-  width: 100vw;
-  .topNav {
-    width: 100vw;
-    height: 60px;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
+  width: 100%;
+  margin-top: -60px;
+  background: url("~@/assets/1.JPG") no-repeat;
+  background-size: cover;
   .middle {
     position: relative;
+
     &::before {
       content: "";
       z-index: -3;
       width: 100vw;
-      height: calc(100vh - 60px);
+      height: calc100vh;
       position: absolute;
       top: 0;
       left: 0;
@@ -91,7 +82,7 @@ export default {
     .title {
       height: 50vh;
       text-align: center;
-      padding-top: calc(50vh - 60px);
+      padding-top: 50vh;
       h1 {
         display: inline-block;
         width: 400px;
@@ -114,33 +105,20 @@ export default {
       }
     }
   }
+
   .main {
+    width: 100%;
     color: @black;
-    width: 100vw;
-    .right {
-      position: fixed;
-      z-index: -2;
-      top: 0px;
+    padding: 60px 20px;
+    .left {
+      position: sticky;
+      top: 60px;
       .user {
-        overflow: hidden;
-        height: 500px;
-        margin: 20px 0 0 20px;
-      }
-      .notice {
-        height: 250px;
-        border-radius: 10px;
-        overflow: hidden;
-        padding: 5px;
-        margin: 20px 0 0 20px;
-        box-sizing: border-box;
-        background-color: @c-100;
+        margin-bottom: 20px;
       }
     }
-
-    .blog {
-      height: 1000px;
-      border-radius: 10px;
-      padding-right: 20px;
+    .right {
+      margin-bottom: 20px;
     }
   }
 }

@@ -1,13 +1,8 @@
 <template>
   <div class="blogs">
     <el-row :gutter="20"
-      ><el-col :span="6">
-        <el-image
-          style="height: 200px; border-radius: 10px"
-          :src="url"
-        ></el-image
-      ></el-col>
-      <el-col :span="18">
+      ><el-col :span="10"> <el-image :src="url"></el-image></el-col>
+      <el-col :span="14">
         <div class="text">
           <h1>标题</h1>
           <h6>发布时间:2023-10-19</h6>
@@ -38,13 +33,26 @@ export default {
 <style lang="less" scoped>
 .blogs {
   padding-right: 20px;
-  margin: 20px 0;
   border-radius: 10px;
   overflow: hidden;
   background-color: @c-100;
+  .el-image {
+    height: 200px;
+    border-radius: 10px;
+    min-width: 150px;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
   .text {
     h1 {
       margin: 10px 0;
+      cursor: pointer;
+      &:hover {
+        color: @c-300;
+      }
     }
     h6 {
       margin: 5px 0;
@@ -59,6 +67,7 @@ export default {
     }
     .icon {
       margin-top: 10px;
+      cursor: pointer;
     }
   }
 }

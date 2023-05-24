@@ -19,6 +19,11 @@ const router = new VueRouter({
       path: "/homePage",
       component: () => import("@/pages/home-page"),
     },
+    {
+      name: "blogDetail",
+      path: "/blogDetail",
+      component: () => import("@/pages/blog-detail"),
+    },
   ],
 });
 

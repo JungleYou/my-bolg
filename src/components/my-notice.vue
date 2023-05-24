@@ -18,6 +18,10 @@ export default {
 .not {
   width: 100%;
   height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: @c-100;
   .title {
     font-size: 25px;
     i {

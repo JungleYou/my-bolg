@@ -1,10 +1,8 @@
 <template>
   <div class="content">
-    <el-row type="flex">
-      <el-col :span="14">
-        <header class="title">YYS的个人博客</header>
-      </el-col>
-      <el-col :span="10">
+    <el-row type="flex" justify="space-between">
+      <el-col> <header class="title">YYS的个人博客</header></el-col>
+      <el-col>
         <ul class="nav">
           <li @click="toMusic"><i class="el-icon-s-home"></i>音乐项目</li>
           <li><i class="el-icon-tickets"></i>时间轴</li>

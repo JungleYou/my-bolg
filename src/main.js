@@ -22,6 +22,13 @@ import myNotice from "@/components/my-notice";
 Vue.component(myNotice.name, myNotice);
 import blogItem from "@/components/blog-item";
 Vue.component(blogItem.name, blogItem);
+import markDown from "@/components/mark-down";
+Vue.component(markDown.name, markDown);
+
+// 引入markdown
+import mavonEditor from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
+Vue.use(mavonEditor);
 
 Vue.config.productionTip = false;
 new Vue({

@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <!-- 顶部导航 start-->
+    <div class="topNav">
+      <el-collapse-transition>
+        <topNav v-show="show"></topNav>
+      </el-collapse-transition>
+    </div>
+    <!-- 顶部导航 end -->
     <div class="control">
       <el-collapse-transition>
         <handleBtn v-show="show"></handleBtn>
@@ -33,8 +40,14 @@ li {
   width: 100vw;
   height: 100vh;
   min-width: 1200px;
-  background: url("~@/assets/1.JPG") no-repeat;
-  background-size: cover;
+
+  .topNav {
+    width: 100%;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
   .control {
     z-index: 1;
     position: fixed;
