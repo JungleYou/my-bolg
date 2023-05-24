@@ -41,7 +41,7 @@ export default {
     toNext() {
       // console.log("1");
       // console.log(document.body.clientHeight);
-      let height = document.body.clientHeight;
+      let height = window.screen.availHeight - 60;
       window.scrollTo({
         top: height,
         behavior: "smooth",
@@ -63,11 +63,11 @@ export default {
 .content {
   width: 100%;
   margin-top: -60px;
-  background: url("~@/assets/1.JPG") no-repeat;
-  background-size: cover;
+
   .middle {
     position: relative;
-
+    background: url("~@/assets/1.JPG") no-repeat;
+    background-size: cover;
     &::before {
       content: "";
       z-index: -3;
@@ -79,6 +79,7 @@ export default {
       background-color: @black;
       opacity: 0.1;
     }
+
     .title {
       height: 50vh;
       text-align: center;
