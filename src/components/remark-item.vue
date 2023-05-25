@@ -33,7 +33,6 @@ export default {
 .contxt {
   width: 100%;
   height: 100%;
-  background-color: @c-50;
   .el-image {
     width: 70px;
     height: 70px;
@@ -41,7 +40,6 @@ export default {
     border-radius: 50%;
   }
   .remark {
-    color: @c-500;
   }
 }
 </style>

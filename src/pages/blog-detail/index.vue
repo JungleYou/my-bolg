@@ -2,11 +2,11 @@
   <div class="blog">
     <el-row>
       <el-col :span="6" class="left">
-        <userInfo class="user"></userInfo>
-        <myNotice></myNotice>
+        <userInfo class="user" :class="isnight ? 'night' : 'day'"></userInfo>
+        <myNotice :class="isnight ? 'night' : 'day'"></myNotice>
       </el-col>
       <el-col :span="18">
-        <div class="mains">
+        <div class="mains" :class="isnight ? 'night' : 'day'">
           <div class="title">
             <header>标题</header>
             <h4>发布时间:2023-10-19 | 更新时间:2024-10-19</h4>
@@ -16,7 +16,7 @@
             <markDown></markDown>
           </div>
           <div class="comment">
-            <myComment></myComment>
+            <myComment :class="isnight ? 'night' : 'day'"></myComment>
           </div>
         </div>
       </el-col>
@@ -25,8 +25,12 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "blogDetail",
+  computed: {
+    ...mapState("systemSet", ["isnight"]),
+  },
 };
 </script>
 
@@ -64,12 +68,10 @@ export default {
     .text {
       margin-top: 20px;
       border-radius: 10px 10px 0 0;
-      color: @black;
       overflow: hidden;
     }
     .comment {
       padding: 10px;
-      background-color: @white;
     }
   }
 }

@@ -23,7 +23,7 @@
       </el-row>
     </div>
     <div class="btn">
-      <el-button style="width: 50%" round>github</el-button>
+      <el-button style="width: 50%" round @click="toGit">github</el-button>
     </div>
   </div>
 </template>
@@ -35,6 +35,11 @@ export default {
     return {
       url: "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
     };
+  },
+  methods: {
+    toGit() {
+      open("https://github.com/JungleYou", "_blank");
+    },
   },
 };
 </script>
@@ -53,6 +58,9 @@ export default {
   }
   .ava {
     text-align: center;
+    .el-image {
+      cursor: pointer;
+    }
   }
   .name,
   .des {

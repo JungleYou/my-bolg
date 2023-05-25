@@ -34,8 +34,10 @@ import mavonEditor from "mavon-editor";
 import "mavon-editor/dist/css/index.css";
 Vue.use(mavonEditor);
 
+import store from "./store";
 Vue.config.productionTip = false;
 new Vue({
   router,
+  store,
   render: (h) => h(App),
 }).$mount("#app");

@@ -11,18 +11,26 @@
       </div>
     </div>
     <!-- 主页中间按钮 end -->
-    <el-row class="main" :gutter="20">
+    <el-row class="main" :gutter="20" :class="isnight ? 'night' : 'day'">
       <el-col :span="6" class="left">
-        <userInfo class="user"></userInfo>
-        <myNotice></myNotice>
+        <userInfo class="user" :class="isnight ? 'night' : 'day'"></userInfo>
+        <myNotice :class="isnight ? 'night' : 'day'"></myNotice>
       </el-col>
       <el-col :span="18">
         <el-row :gutter="20">
           <div @click="toBlogDetail">
-            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
-            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
-            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
-            <el-col :span="12" class="right"><blogItem></blogItem></el-col>
+            <el-col :span="12" class="right"
+              ><blogItem :class="isnight ? 'night' : 'day'"></blogItem
+            ></el-col>
+            <el-col :span="12" class="right"
+              ><blogItem :class="isnight ? 'night' : 'day'"></blogItem
+            ></el-col>
+            <el-col :span="12" class="right"
+              ><blogItem :class="isnight ? 'night' : 'day'"></blogItem
+            ></el-col>
+            <el-col :span="12" class="right"
+              ><blogItem :class="isnight ? 'night' : 'day'"></blogItem
+            ></el-col>
           </div>
         </el-row>
       </el-col>
@@ -32,6 +40,7 @@
 
 <script>
 import { mixin } from "@/mixin";
+import { mapState } from "vuex";
 export default {
   name: "homePage",
   mixins: [mixin],
@@ -56,6 +65,9 @@ export default {
       }
     },
   },
+  computed: {
+    ...mapState("systemSet", ["isnight"]),
+  },
 };
 </script>
 
@@ -72,35 +84,32 @@ export default {
       content: "";
       z-index: -3;
       width: 100vw;
-      height: calc100vh;
+      height: 100vh;
       position: absolute;
       top: 0;
       left: 0;
       background-color: @black;
       opacity: 0.1;
     }
-
     .title {
       height: 50vh;
       text-align: center;
       padding-top: 50vh;
+      color: @white;
       h1 {
         display: inline-block;
         width: 400px;
         height: 60px;
         margin: 0;
         font-size: 30px;
-        color: @white;
         text-align: center;
       }
       h5 {
         font-size: 16px;
-        color: @white;
       }
       .down {
         text-align: center;
         font-size: 50px;
-        color: @white;
         margin-top: calc(50vh - 180px);
         cursor: pointer;
       }

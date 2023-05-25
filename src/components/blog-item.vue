@@ -68,7 +68,6 @@ export default {
       font-size: 15px;
       overflow: hidden;
       word-break: break-word;
-      //   background-color: @c-200;
     }
     .icon {
       margin-top: 10px;
